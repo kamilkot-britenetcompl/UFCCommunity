@@ -3,6 +3,7 @@ global User createUser(Id portalId, Auth.UserData data){
 	if(data.attributeMap.containsKey('sfdc_networkid')) {
 		//We have a community id, so create a user with community access
 		//TODO: Get an actual account
+
 		Account a = [SELECT Id FROM account WHERE name='Community Account'];
 		Contact c = new Contact();
 		c.accountId = a.Id;

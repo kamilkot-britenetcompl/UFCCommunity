@@ -1,4 +1,5 @@
-<aura:component implements="forceCommunity:themeLayout" access="global" description="Sample Custom Theme Layout">
+<aura:component implements="forceCommunity:themeLayout" access="global" description="Sample Custom Theme Layout"
+                xmlns:Lightning="">
     <aura:attribute name="search" type="Aura.Component[]" required="false"/>
     <aura:attribute name="profileMenu" type="Aura.Component[]" required="false"/>
     <aura:attribute name="navBar" type="Aura.Component[]" required="false"/>

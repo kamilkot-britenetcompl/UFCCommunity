@@ -11,6 +11,7 @@
                 <div class="searchRegion">
                     <!-- Search Publisher component -->
 <!--                    -->
+<!--                    -->
                     {!v.search}
 
                 </div>

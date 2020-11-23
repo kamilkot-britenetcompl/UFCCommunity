@@ -5,5 +5,5 @@
     },
     removeItem: function(component, event, helper) {
         helper.removeItem(component, event);
-    }
+    },
 });

@@ -2,15 +2,9 @@
                 controller="UFCCommunity_Controller">
 
     <aura:attribute name="contactId" type="String"/>
-    <aura:attribute name="basketElements" type="Object[]"/>
+    <aura:attribute name="basketElements" type="List"/>
     <aura:handler name="init" value="{!this}" action="{!c.init}"/>
     <lightning:notificationsLibrary aura:id="notification"/>
-
-    <!--    <div>-->
-    <!--        TEST CONTENT <br/>-->
-    <!--        {!v.userId} <br/>-->
-    <!--        {!v.contactId}-->
-    <!--    </div>-->
 
     <table class="slds-table slds-table_cell-buffer slds-table_bordered">
         <thead>
@@ -42,11 +36,6 @@
                     <lightning:formattedText value="placeholder"/>
                 </td>
                 <td data-label="Actions">
-<!--                    <lightning:button aura:id="delete" type="button" variant="brand" label="Delete" onclick="{!c.search}" />-->
-<!--                    <lightning:button aura:id="delete" type="button" variant="brand" label="Delete"/>-->
-<!--                    <div onclick="{!c.removeItem}" data-value="123">-->
-<!--                        <lightning:button label="Remove" iconName="utility:delete" iconPosition="left"  variant="destructive" value="123"/>-->
-<!--                    </div>-->
                     <div onclick="{!c.removeItem}" data-value="{!index}">
                         <lightning:button label="Remove" iconName="utility:delete" iconPosition="left"  variant="destructive" value="{!index}"/>
                     </div>

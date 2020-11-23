@@ -16,7 +16,13 @@ public with sharing class UFCCommunity_Controller {
     @AuraEnabled
     public static List<Basket_Element__c> getBasketElements() {
         Id userId = getContactId();
-        List<Basket_Element__c> basketElements = [Select Id, Product__r.Name, Quantity__c from Basket_Element__c where Contact__c = :userId];
+        List<Basket_Element__c> basketElements = [SELECT Id, Product__r.Name, Quantity__c FROM Basket_Element__c WHERE Contact__c = :userId];
         return basketElements;
+    }
+
+    @AuraEnabled
+    public static void removeBasketElement (String sObjectId) {
+        List<Basket_Element__c> basketElements = [SELECT Id, Product__c FROM Basket_Element__c WHERE Id = :sObjectId];
+        delete basketElements;
     }
 }

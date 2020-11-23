@@ -34,8 +34,7 @@
     },
 
     removeItem : function(component, event) {
-        var currentTarget = event.currentTarget;
-        var elementIndex = currentTarget.dataset.value;
+        let elementIndex = component.get('v.clickedItemIndex');
         const action = component.get('c.removeBasketElement');
         action.setParams({
             sObjectId: component.get('v.basketElements')[elementIndex].Id

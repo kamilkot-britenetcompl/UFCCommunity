@@ -38,9 +38,7 @@
                     <lightning:formattedText value="placeholder"/>
                 </td>
                 <td data-label="Actions">
-                    <div onclick="{!c.showConfirmDeleteDialog}" data-value="{!index}">
-                        <lightning:button label="Remove" iconName="utility:delete" iconPosition="left"  variant="destructive" value="{!index}"/>
-                    </div>
+                    <lightning:button value="{!index}" onclick="{!c.showConfirmDeleteDialog}" label="Remove from Basket" iconName="utility:delete" iconPosition="left"  variant="destructive"/>
                 </td>
             </tr>
         </aura:iteration>

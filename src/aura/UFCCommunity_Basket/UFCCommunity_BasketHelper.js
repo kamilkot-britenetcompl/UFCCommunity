@@ -21,7 +21,6 @@
             const status = response.getState();
             if (status === 'SUCCESS') {
                 component.set('v.basketElements', response.getReturnValue());
-                console.log('Basket Elements: '+ component.get('v.basketElements'));
             } else {
                 this.handleShowToast(component, event, 'Error', 'error', 'Error while processing loading data');
                 let errors = response.getError();

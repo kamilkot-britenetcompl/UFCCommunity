@@ -7,8 +7,7 @@
         helper.removeItem(component, event);
     },
     showConfirmDeleteDialog: function(component, event, helper) {
-        var currentTarget = event.currentTarget;
-        var elementIndex = currentTarget.dataset.value;
+        var elementIndex = event.getSource().get('v.value');
         component.set('v.clickedItemIndex', elementIndex);
         component.set('v.isConfirmDeleteDialogVisible', true);
     },

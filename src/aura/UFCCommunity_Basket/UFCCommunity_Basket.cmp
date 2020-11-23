@@ -1,0 +1,59 @@
+<aura:component description="UFCCommunity_Basket" implements="force:hasRecordId, forceCommunity:availableForAllPageTypes"
+                controller="UFCCommunity_Controller">
+
+    <aura:attribute name="userId" type="String"/>
+    <aura:attribute name="contactId" type="String"/>
+    <aura:attribute name="basketElements" type="Object[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+    <!--    <div>-->
+    <!--        TEST CONTENT <br/>-->
+    <!--        {!v.userId} <br/>-->
+    <!--        {!v.contactId}-->
+    <!--    </div>-->
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+        <tr class="slds-text-title_caps">
+            <th scope="col">
+                <div class="slds-truncate" title="Product Name">Product Name</div>
+            </th>
+            <th scope="col">
+                <div class="slds-truncate" title="Quantity">Quantity</div>
+            </th>
+            <th scope="col">
+                <div class="slds-truncate" title="Price">Price</div>
+            </th>
+            <th scope="col">
+                <div class="slds-truncate" title="Actions">Actions</div>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <aura:iteration items="{!v.basketElements}" var="item" indexVar="index">
+            <tr aura:id="row" data-id="{!item.Id}" data-index="{!index}" class="">
+                <td data-label="Product Name">
+                    <lightning:formattedText value="{!item.Product__r.Name}"/>
+                </td>
+                <td data-label="Quantity">
+                    <lightning:formattedNumber value="{!item.Quantity__c}"/>
+                </td>
+                <td data-label="Quantity">
+                    <lightning:formattedText value="placeholder"/>
+                </td>
+                <td data-label="Actions">
+<!--                    <lightning:button aura:id="delete" type="button" variant="brand" label="Delete" onclick="{!c.search}" />-->
+<!--                    <lightning:button aura:id="delete" type="button" variant="brand" label="Delete"/>-->
+<!--                    <div onclick="{!c.removeItem}" data-value="123">-->
+<!--                        <lightning:button label="Remove" iconName="utility:delete" iconPosition="left"  variant="destructive" value="123"/>-->
+<!--                    </div>-->
+                    <div onclick="{!c.removeItem}" data-value="{!index}">
+                        <lightning:button label="Remove" iconName="utility:delete" iconPosition="left"  variant="destructive" value="{!index}"/>
+                    </div>
+                </td>
+            </tr>
+        </aura:iteration>
+        </tbody>
+    </table>
+
+</aura:component>
